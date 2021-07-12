@@ -31,14 +31,14 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between">
-                <h1 class="h3 text-gray-900">Input Data Orang Terlantar</h1>
+                <h1 class="h3 text-gray-900">Input Data Klien</h1>
                 <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
             </div>
 
             <!-- Content Row -->
             <div class="card shadow m-b-50">
                 <div class="card-body">
-                    <form action="php/proses_InputData_ot" method="post" enctype="multipart/form-data">
+                    <form action="php/proses_InputData_klien" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">

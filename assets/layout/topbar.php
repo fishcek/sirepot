@@ -7,9 +7,8 @@
 </button>
 
 <!-- Topbar Search -->
-<div class="navbar-brand">
-  <img class="img-logo-full" src="../assets/img/logo.png">
-  <img class="img-logo-min" src="../assets/img/logo1.png">
+<div class="navbar-brand m-t-5">
+  <h5><strong>Sistem Informasi</strong><br>Register Pelayanan Orang Terlantar</h5>
 </div>
 
 <!-- Topbar Navbar -->
