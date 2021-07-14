@@ -31,7 +31,7 @@
                     <h1 class="h4 text-gray-900 mb-4">Silahkan<br>Masuk Terlebih Dahulu</h1>
                   </div>
                   
-                  <form class="user" action="php/login" method="POST">
+                  <form class="user" action="php/login" method="GET">
                     <div class="form-group">
                       <label>Username</label>
                       <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukan Username">

@@ -8,6 +8,8 @@
     <title>Detail User | SiRepot</title>
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/alertify/alertify.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/alertify/themes/default.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
     <link href="../assets/css/util.css" rel="stylesheet">
@@ -52,226 +54,64 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">1</td>
-                                <td>US001</td>
-                                <td>Fulan</td>
-                                <td>fulan@gmail.com</td>
-                                <td>FO</td>
-                                <td>
-                                    <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td  style="text-align: center;">2</td>
-                                <td>US002</td>
-                                <td>Fulanah</td>
-                                <td>fulanah@gmail.com</td>
-                                <td>PekSos</td>
-                                <td>
-                                    <a href="detail_user?id=US002" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_user?id=US002" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
+                                    <tr class="text-center">
+                                        <th width="10px">1</th>
+                                        <th width="30px">KL120720211001</th>
+                                        <th>Fulan</th>
+                                        <th>fulan@gful.com</th>
+                                        <th>admin</th>
+                                        <td>
+                                            <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
+                                            <a href="php/proses_user?proses=delete&id=KL120720211001" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                            <?php
+                                for ($i=2; $i <=9; $i++) { 
+                                        $idUser='KL12072021100'.$i;
+                                    ?>
+                                    <tr class="text-center">
+                                        <th width="10px"><?=$i;?></th>
+                                        <th width="30px"><?=$idUser;?></th>
+                                        <th>Fulan</th>
+                                        <th>fulan@gful.com</th>
+                                        <th>FO</th>
+                                        <td>
+                                            <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
+                                            <a href="php/proses_user?proses=delete&id=<?=$idUser;?>" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+                                    <tr class="text-center">
+                                        <th width="10px"><?=$i;?></th>
+                                        <th width="30px">KL1207202110010</th>
+                                        <th>Fulanah</th>
+                                        <th>fulanah@gful.com</th>
+                                        <th>admin</th>
+                                        <td>
+                                            <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
+                                            <a href="php/proses_user?proses=delete&id=KL1207202110010" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php
+                                for ($j=11; $j <=20; $j++) { 
+                                        $idUser='KL12072021100'.$j;
+                                    ?>
+                                    <tr class="text-center">
+                                        <th width="10px"><?=$j;?></th>
+                                        <th width="30px"><?=$idUser;?></th>
+                                        <th>Fulanah</th>
+                                        <th>fulanah@gful.com</th>
+                                        <th>Peksos</th>
+                                        <td>
+                                            <a href="detail_user?id=US001" class="btn btn-sm btn-warning">Detail</a>
+                                            <a href="php/proses_user?proses=delete&id=<?=$idUser;?>" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            ?> 
                             
                         </tbody>
                         </table>
@@ -300,7 +140,11 @@
     <script src="../assets/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+    <!-- Alert -->
+    <script src="../assets/vendor/alertify/alertify.min.js"></script>
+
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/datatables-demo.js"></script>
+
 </body>
 </html>

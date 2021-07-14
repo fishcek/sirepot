@@ -46,13 +46,13 @@
                                     <input type="text" name="namaUser" class="form-control border-radius-10" required>
                                 </div>
                                 <div class="form-group">
+                                    <label class="text-dark">Username</label>
+                                    <input type="text" name="username" class="form-control border-radius-10" required>
+                                </div>
+                                <div class="form-group">
                                     <label class="text-dark">Password</label>
                                     <input type="password" name="password" id="password" class="form-control border-radius-10" onchange="validasi('password')" required>
                                     <span class="text-danger small" id="errorPass"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label class="text-dark">Kode</label>
-                                    <input type="text" name="kode" class="form-control border-radius-10" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-dark">Email</label>
@@ -101,6 +101,7 @@
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
+    
     <script>
         function validasi(type){
             if (type=='number') {

@@ -50,7 +50,7 @@
             <!-- Content Row -->
             <div class="card shadow m-b-50">
                 <div class="card-body">
-                    <form action="php/proses_InputData_klien" id="formUser" method="post" enctype="multipart/form-data">
+                    <form action="php/proses_klien" id="formUser" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
@@ -113,7 +113,7 @@
                                 <div class="button-group">
                                     <input type="button" value="Edit" id="btnEdit" class="btn btn-warning">
                                     <input type="button" value="Batal" id="btnBatal" class="btn btn-danger">
-                                    <input type="submit" value="Simpan" id="btnSimpan" name="input_ot" class="btn btn-primary">
+                                    <input type="submit" value="Simpan" id="btnSimpan" name="edit_ot" class="btn btn-primary">
                                 </div>
 
                             </div>

@@ -56,306 +56,47 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulanah</th>
-                                <th>24</th>
-                                <th>Perempuan</th>
-                                <th>Kopid Mulu</th>
-                                <th>Bumi</th>
-                                <th>Pluto</th>
-                                <th>12/07/2021</th>
-                                <td>
-                                    <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                    <a href="php/delete_klien?id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
+                            <?php
+                                for ($i=1; $i <=10; $i++) { 
+                                    ?>
+                                    <tr class="text-center">
+                                        <th width="10px"><?=$i;?></th>
+                                        <th width="30px">KL12072021100<?=$i;?></th>
+                                        <th>Fulan</th>
+                                        <th>24</th>
+                                        <th>Laki-Laki</th>
+                                        <th>Kopid Mulu</th>
+                                        <th>Bumi</th>
+                                        <th>Pluto</th>
+                                        <th>12/07/2021</th>
+                                        <td>
+                                            <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
+                                            <a href="php/proses_klien?proses=delete&id=US001" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+
+                                for ($j=11; $j <=20; $j++) { 
+                                    ?>
+                                    <tr class="text-center">
+                                        <th width="10px"><?=$j;?></th>
+                                        <th width="30px">KL12072021100<?=$j;?></th>
+                                        <th>Fulanah</th>
+                                        <th>20</th>
+                                        <th>Perempuan</th>
+                                        <th>Kopid Mulu</th>
+                                        <th>Bumi</th>
+                                        <th>Pluto</th>
+                                        <th>12/07/2021</th>
+                                        <td>
+                                            <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
+                                            <a href="php/proses_klien?proses=delete&id=US001" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            ?>
                         </tbody>
                         </table>
                     </div>

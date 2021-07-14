@@ -32,17 +32,17 @@
           <span>Input Data Klien</span></a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="infoAsesmen_klien">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Asesmen Klien</span></a>
-      </li>
-
       <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="infoData_klien">
           <i class="fas fa-fw fa-address-book"></i>
           <span>Info Data Klien</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="infoAsesmen_klien">
+          <i class="fas fa-fw fa-tag"></i>
+          <span>Assesmen Klien</span></a>
       </li>
       
       <!-- Nav Item - Charts -->

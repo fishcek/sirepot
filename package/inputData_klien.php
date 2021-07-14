@@ -38,7 +38,7 @@
             <!-- Content Row -->
             <div class="card shadow m-b-50">
                 <div class="card-body">
-                    <form action="php/proses_InputData_klien" method="post" enctype="multipart/form-data">
+                    <form action="php/proses_klien" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
@@ -53,11 +53,11 @@
                                 <div class="form-group">
                                 <label class="text-dark">Jenis Kelamin</label><br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio1" value="1" required>
+                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio1" value="L" required>
                                         <label class="form-check-label text-dark" for="inlineRadio1">Laki-Laki</label>
                                     </div>
                                     <div class="form-check form-check-inline text-dark">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio2" value="0" required>
+                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio2" value="P" required>
                                         <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                     </div>
                                 </div>
