@@ -1,16 +1,24 @@
-
+<?php 
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        header("location: login", true, 301);
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Klien | SiRepot</title>
+    <title>Data Asesmen | SiRepot</title>
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
     <link href="../assets/css/util.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/alertify/css/alertify.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/alertify/css/themes/default.min.css" />
 </head>
 <body id="page-top">
 
@@ -32,7 +40,7 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between">
-                <h1 class="h3 text-gray-900">Data Klien</h1>
+                <h1 class="h3 text-gray-900">Data Asesmen</h1>
                 <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
             </div>
 
@@ -46,29 +54,48 @@
                                 <th width="10px">No</th>
                                 <th width="30px">Kode</th>
                                 <th>Nama</th>
-                                <th>Umur</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Masalah</th>
-                                <th>Tanggal Terakhir Asesmen</th>
-                                <th>Status</th>
+                                <th>Tempat Tanggal Lahir</th>
+                                <th>Tanggal Masuk</th>
+                                <th>Status Aktif</th>
                                 <th width="110px">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                                <th width="10px">1</th>
-                                <th width="30px">KL120720211001</th>
-                                <th>Fulan</th>
-                                <th>24</th>
-                                <th>Laki-Laki</th>
-                                <th>Kopid Mulu</th>
-                                <th>12/07/2021</th>
-                                <th><span class="badge badge-danger">Belum Lulus</span></th>
-                                <td>                                    
-                                    <a href="inputAsesmen_klien?id=US001" class="btn btn-sm btn-success m-b-5">Asesmen</a>
-                                    <a href="detailAsesmen_klien?id=US001" class="btn btn-sm btn-warning">Detail Asesmen</a>
-                                </td>
-                            </tr>
+                        <?php
+                                include 'php/koneksi.php';
+                                $no=1;
+                                $ambilData = mysqli_query($koneksi,"SELECT * FROM tb_pasien");
+                                while ($dataPasien = mysqli_fetch_array($ambilData) ) {
+                                    $tglLahir=explode('-',$dataPasien['tanggalLahir']);
+                                    $tglMasuk=explode('-',$dataPasien['tanggalMasukPanti']);
+                                    $ttl=ucwords($dataPasien['tempatLahir']).', '.$tglLahir[2].'-'.$tglLahir[1].'-'.$tglLahir[0];
+                                    $masuk=$tglMasuk[2].'-'.$tglMasuk[1].'-'.$tglMasuk[0];
+                                    if ($dataPasien['idAses']!='') {
+                                        $status= '<span class="badge badge-success">Sudah Asesmen</span>';
+                                        $btn='<a href="detailAsesmen_pasien?id='.$dataPasien['idPasien'].'" class="btn btn-sm btn-info" >Detail</a>';
+                                    }else{
+                                        $status = '<span class="badge badge-danger">Belum Asesmen</span>';
+                                        $btn='<a href="inputAsesmen_pasien?id='.$dataPasien['idPasien'].'" class="btn btn-sm btn-success" >Asesmen</a>';
+                                    }
+
+                                ?>
+
+                                    <tr class="text-center">
+                                        <th width="10px"><?=$no++;?></th>
+                                        <th width="30px"><?=$dataPasien['idPasien'];?></th>
+                                        <th><?=ucwords($dataPasien['namaPasien']);?></th>
+                                        <th><?=$ttl;?></th>
+                                        <th><?=$masuk;?></th>
+                                        <th><?=$status;?></th>
+                                        <th>
+                                            <?=$btn;?>
+                                            
+                                        </th>
+                                    </tr>
+                                    
+                                <?php
+                                }
+                            ?>
                         </tbody>
                         </table>
                     </div>
@@ -98,5 +125,7 @@
 
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/datatables-demo.js"></script>
+    <!-- Alert -->
+    <script src="../assets/vendor/alertify/alertify.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+//instalasi
+extrak ke folder htdocs didalam folder instalasi xampp
+C:\xampp\htdocs\
+
+masuk ke phpmyadmin
+http://localhost/phpmyadmin/
+buatlah database dengan nama sirepot_db
+setelah membuat database silahkan import dengan masuk tab import pada phpmyadmin
+klik Browse your computer: lalu cari file databasenya
+C:\xampp\htdocs\SIRepot\db\
+selanjutnya klik go
+
+
+//Akun
+
+Admin
+username : admin
+password : 11223344
+
+FO
+username : anatasya12
+password : 11223344
+
+Peksos
+username : diraamd
+password : 11223344

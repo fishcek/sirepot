@@ -1,0 +1,17 @@
+popup login (done)
+
+SI Administrasi Rehabilitasi Klien Penyandang Disabilitas Sensorik
+
+surat pernyataan ayah/ibu/wali
+input wali input ayah ibu
+input ayah/ibu update data
+
+menu wali ortu satukan di page detail pasien
+
+laporan cek
+laporan peksos seleksi skor
+
+keterangan laporan
+laki-laki
+perempuan
+total

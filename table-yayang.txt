@@ -1,0 +1,17 @@
+tb_wali{
+-id
+-nama
+-umur
+-jenis kelamin
+-agama
+-pekerjaan
+-alamat
+-type (1=ayah, 2=ibu, 3=wali)
+-pasien_id
+}
+
+tb_asesmen {
+-idUser
+-soal (int 1)
+-rumus hitung di frontend
+}

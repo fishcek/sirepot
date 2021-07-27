@@ -1,4 +1,10 @@
-
+<?php 
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        header("location: login", true, 301);
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
     <link href="../assets/css/util.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/alertify/css/alertify.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/alertify/css/themes/default.min.css" />
 </head>
 <body id="page-top">
 
@@ -32,7 +40,8 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between">
-                <h1 class="h3 text-gray-900">Data Klien</h1>
+                <h1 class="h3 text-gray-900">Data Pasien</h1>
+                <a href="inputData_klien" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">Tambah Pasien</a>
                 <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
             </div>
 
@@ -45,56 +54,39 @@
                             <tr class="text-center">
                                 <th width="10px">No</th>
                                 <th width="30px">Kode</th>
-                                <th>Nama</th>
-                                <th>Umur</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Masalah</th>
-                                <th>Asal</th>
-                                <th>Tujuan</th>
-                                <th>Tanggal</th>
+                                <th>Nama Wali</th>
+                                <th>Tempat Tanggal Lahir</th>
+                                <th>Nomor KTP</th>
+                                <th>Alamat</th>
+                                <th>No Telepon</th>
                                 <th width="110px">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                for ($i=1; $i <=10; $i++) { 
-                                    ?>
-                                    <tr class="text-center">
-                                        <th width="10px"><?=$i;?></th>
-                                        <th width="30px">KL12072021100<?=$i;?></th>
-                                        <th>Fulan</th>
-                                        <th>24</th>
-                                        <th>Laki-Laki</th>
-                                        <th>Kopid Mulu</th>
-                                        <th>Bumi</th>
-                                        <th>Pluto</th>
-                                        <th>12/07/2021</th>
-                                        <td>
-                                            <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                            <a href="php/proses_klien?proses=delete&id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                }
+                                include 'php/koneksi.php';
+                                $no=1;
+                                $ambilData = mysqli_query($koneksi,"SELECT * FROM tb_wali");
+                                while ($dataWali = mysqli_fetch_array($ambilData) ) {
+                                    $tglLahir=explode('-',$dataWali['tanggalLahir']);
+                                    $ttl=ucwords($dataWali['tempatLahir']).', '.$tglLahir[2].'-'.$tglLahir[1].'-'.$tglLahir[0];
+                                ?>
 
-                                for ($j=11; $j <=20; $j++) { 
-                                    ?>
                                     <tr class="text-center">
-                                        <th width="10px"><?=$j;?></th>
-                                        <th width="30px">KL12072021100<?=$j;?></th>
-                                        <th>Fulanah</th>
-                                        <th>20</th>
-                                        <th>Perempuan</th>
-                                        <th>Kopid Mulu</th>
-                                        <th>Bumi</th>
-                                        <th>Pluto</th>
-                                        <th>12/07/2021</th>
-                                        <td>
-                                            <a href="detail_klien?id=US001" class="btn btn-sm btn-warning">Detail</a>
-                                            <a href="php/proses_klien?proses=delete&id=US001" class="btn btn-sm btn-danger">Hapus</a>
-                                        </td>
+                                        <th width="10px"><?=$no++;?></th>
+                                        <th width="30px"><?=$dataWali['idWali'];?></th>
+                                        <th><?=ucwords($dataWali['namaWali']);?></th>
+                                        <th><?=$ttl;?></th>
+                                        <th><?=$dataWali['nomorKTP'];?></th>
+                                        <th><?=$dataWali['alamat'];?></th>
+                                        <th><?=$dataWali['noTelp'];?></th>
+                                        <th>
+                                            <a href="edit_wali?id=<?=$dataWali['idPasien'];?>" class="btn btn-sm btn-warning m-t-5">Edit</a>
+                                            <button onclick="confirm('<?=$dataWali['idPasien']?>')" class="btn btn-sm btn-danger m-t-5">Hapus</button>
+                                        </th>
                                     </tr>
-                                    <?php
+                                    
+                                <?php
                                 }
                             ?>
                         </tbody>
@@ -126,5 +118,14 @@
 
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/datatables-demo.js"></script>
+     <!-- Alert -->
+     <script src="../assets/vendor/alertify/alertify.min.js"></script>
+    <script>
+        function confirm(id){
+            alertify.confirm('Hapus Data', 'Anda Yakin Akan Menghapus Akun Ini ?', function(){ window.location.assign('php/proses_waliOrtu?proses=deleteWali&id='+id); }
+            , function(){window.location.assign('infoData_wali');});
+        }
+
+    </script>
 </body>
 </html>

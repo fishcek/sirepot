@@ -423,6 +423,18 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+.hide{
+  display: none !important;
+}
+
+.show{
+  display: block !important;
+}
+
+.box-200{
+  width: 200px !important;
+}
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
@@ -524,8 +536,8 @@ mark,
 }
 
 .img-preview{
-  width: 300px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -582,6 +594,35 @@ pre code {
 .pre-scrollable {
   max-height: 340px;
   overflow-y: scroll;
+}
+
+.box-center{
+  text-align: center;
+  align-items: center;
+  height: auto;
+  padding: 20px;
+}
+
+.box-center hr{
+  width: 30%;
+  border: 1px solid #7c7c7c;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.box-center .text{
+  text-align: center;
+  align-items: center;
+  height: auto;
+  padding-left: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-center .img-logo{
+  width: 280px;
+  margin-top: 5%;
 }
 
 .container {
@@ -2764,8 +2805,8 @@ fieldset:disabled a.btn {
 
 .btn-info.disabled, .btn-info:disabled {
   color: #fff;
-  background-color: #36b9cc;
-  border-color: #36b9cc;
+  background-color: #2c9faf;
+  border-color: #2c9faf;
 }
 
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
@@ -3010,7 +3051,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-success.disabled, .btn-outline-success:disabled {
-  color: #1cc88a;
+  color: #199c6c;
   background-color: transparent;
 }
 
@@ -4896,6 +4937,11 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
+}
+
+.scroll-box{
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .card {
@@ -7029,7 +7075,9 @@ button.bg-dark:focus {
 }
 
 .button-group{
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bg-white {
@@ -10449,6 +10497,10 @@ a.text-warning:hover, a.text-warning:focus {
   color: #dda20a !important;
 }
 
+.text-love{
+  background-color: #f54141 !important;
+}
+
 .text-danger {
   color: #e74a3b !important;
 }
@@ -10970,19 +11022,11 @@ a:focus {
 .sidebar .img-logo-full,
 .topbar .img-logo-full {
   height: auto;
-  width: 120px !important;
-  display: none;
+  width: 80px !important;
+  display: block;
   margin-left: 1rem;
 }
 
-.sidebar .img-logo-min,
-.topbar .img-logo-min {
-  height: auto;
-  width: 80px !important;
-  display: block;
-  margin-left: 20px;
-
-}
 
 .topbar {
   height: 4.375rem;
@@ -11099,18 +11143,12 @@ a:focus {
   color: #3a3b45;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .topbar .dropdown {
     position: relative;
   }
-  .sidebar .img-logo-full,
-  .topbar .img-logo-full {
-    display: block !important;
-  }
-
-  .sidebar .img-logo-min,
-  .topbar .img-logo-min {
-    display: none !important;
+  .sidebar .img-logo-full{
+    width: 120px !important;
   }
   
   .topbar .dropdown .dropdown-menu {
@@ -11362,6 +11400,7 @@ a:focus {
     overflow: visible;
     width: 6.5rem !important;
   }
+  
   .sidebar.toggled .nav-item .collapse {
     position: absolute;
     left: calc(6.5rem + 1.5rem / 2);
@@ -11408,6 +11447,9 @@ a:focus {
   }
   .sidebar.toggled .sidebar-brand .sidebar-brand-icon i {
     font-size: 2rem;
+  }
+  .sidebar.toggled .sidebar-brand .navbar-brand .img-logo-full {
+    width: 80px !important ;
   }
   .sidebar.toggled .sidebar-brand .sidebar-brand-text {
     display: none;
@@ -12069,7 +12111,7 @@ form.user .btn-user {
 footer.sticky-footer {
   padding: 10px 0;
   bottom: 0;
-  position: fixed;
+  position: relative;
   width: 100%;
 }
 

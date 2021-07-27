@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        header("location: login", true, 301);
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
     <link href="../assets/css/util.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/alertify/css/alertify.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/alertify/css/themes/default.min.css" />
 </head>
 <body id="page-top">
 
@@ -38,7 +46,7 @@
             <!-- Content Row -->
             <div class="card shadow m-b-50">
                 <div class="card-body">
-                    <form action="php/proses_InputData_user" method="post" enctype="multipart/form-data">
+                    <form action="php/proses_user" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
@@ -62,13 +70,14 @@
                                     <label class="text-dark">Level</label>
                                     <select class="form-control border-radius-10" name="level" required>
                                         <option selected hidden>---Pilih Level User---</option>
-                                        <option value="2">Front Office (FO)</option>
-                                        <option value="3">Pekerja Sosial</option>
+                                        <option value="Adm">Admin</option>
+                                        <option value="Fo">Front Office</option>
+                                        <option value="Peksos">Pekerja Sosial</option>
                                     </select>
                                 </div>                                
                                 
                                 <div class="button-group">
-                                    <input type="submit" value="Simpan" name="input_ot" class="btn btn-primary">
+                                    <input type="submit" value="Simpan" name="input_user" class="btn btn-primary">
                                     <input type="reset" value="Reset" class="btn btn-danger">
                                 </div>
                             </div>
@@ -101,6 +110,8 @@
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/chart-area-demo.js"></script>
     <script src="../assets/js/demo/chart-pie-demo.js"></script>
+    <!-- Alert -->
+    <script src="../assets/vendor/alertify/alertify.min.js"></script>
     
     <script>
         function validasi(type){

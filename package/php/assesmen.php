@@ -1,52 +1,28 @@
 <?php
-    if (isset($_POST['simpan'])) {
-
-        // biodata
-        $namaAyah = $_POST['namaAyah'];
-        $umurAyah = $_POST['umurAyah'];
-        $jenisKelaminAyah = $_POST['jenisKelaminAyah'];
-        $agamaAyah = $_POST['agamaAyah'];
-        $kerjaanAyah = $_POST['kerjaanAyah'];
-        $alamatAyah = $_POST['alamatAyah'];
-        $namaIbu = $_POST['namaIbu'];
-        $umurIbu = $_POST['umurIbu'];
-        $jenisKelaminIbu = $_POST['jenisKelaminIbu'];
-        $agamaIbu = $_POST['agamaIbu'];
-        $kerjaanIbu = $_POST['kerjaanIbu'];
-        $alamatIbu = $_POST['alamatIbu'];
-        $namaPasien = $_POST['namaPasien'];
-        $ttlPasien = $_POST['ttlPasien'];
-        $anakPasien = $_POST['anakPasien'];
-        $jenisKelaminPasien = $_POST['jenisKelaminPasien'];
-        $agamaPasien = $_POST['agamaPasien'];
-        $pendidikanPasien = $_POST['pendidikanPasien'];
-        $statusPasien = $_POST['statusPasien'];
-        $golPasien = $_POST['golPasien'];
-        $kerjaanPasien = $_POST['kerjaanPasien'];
-        $jmlSaudaraPasien = $_POST['jmlSaudaraPasien'];
-        $kelDekatPasien = $_POST['kelDekatPasien'];
-
+    include 'koneksi.php';
+    if (isset($_POST['perform'])) {
         // Kelahiran
-        $usiaKandungan = $_POST['usiaKandungan'];
-        $kontrolKandunganRutin = $_POST['kontrolKandunganRutin'];
-        $kontrolKandunganDokter = $_POST['kontrolKandunganDokter'];
-        $kontrolKandunganDukun = $_POST['kontrolKandunganDukun'];
-        $gizi = $_POST['gizi'];
-        $penyakit = $_POST['penyakit'];
-        $kecelakaan = $_POST['kecelakaan'];
-        $bantuanDokter = $_POST['bantuanDokter'];
-        $bantuanBidan = $_POST['bantuanBidan'];
-        $bantuanDukun = $_POST['bantuanDukun'];
-        $tanpaBantuan = $_POST['tanpaBantuan'];
-        $beratBadan = $_POST['beratBadan'];
-        $panjangBadan = $_POST['panjangBadan'];
-        $keadaanLahir = $_POST['keadaanLahir'];
-        $keadaanLahirVacum = $_POST['keadaanLahirVacum'];
-        $keadaanLahirOperasi = $_POST['keadaanLahirOperasi'];
-        $imunisasi = $_POST['imunisasi'];
-        $penyakitStep = $_POST['penyakitStep'];
-        $minumAsi = $_POST['minumAsi'];
-        $bantuanSusu = $_POST['bantuanSusu'];
+        $usiaKandungan = $_POST['dataKelahiran1'];
+        $kontrolKandunganRutin = $_POST['dataKelahiran2'];
+        $kontrolKandunganDokter = $_POST['dataKelahiran3'];
+        $kontrolKandunganDukun = $_POST['dataKelahiran4'];
+        $gizi = $_POST['dataKelahiran5'];
+        $penyakit = $_POST['dataKelahiran6'];
+        $kecelakaan = $_POST['dataKelahiran7'];
+        $bantuanDokter = $_POST['dataKelahiran8'];
+        $bantuanBidan = $_POST['dataKelahiran9'];
+        $bantuanDukun = $_POST['dataKelahiran10'];
+        $tanpaBantuan = $_POST['dataKelahiran11'];
+        $beratBadan = $_POST['dataKelahiran12'];
+        $panjangBadan = $_POST['dataKelahiran13'];
+        $keadaanLahir = $_POST['dataKelahiran14'];
+        $keadaanLahirVacum = $_POST['dataKelahiran15'];
+        $keadaanLahirOperasi = $_POST['dataKelahiran16'];
+        $imunisasi = $_POST['dataKelahiran17'];
+        $penyakitStep = $_POST['dataKelahiran18'];
+        $minumAsi = $_POST['dataKelahiran19'];
+        $bantuanSusu = $_POST['dataKelahiran20'];
+        $skorDataKelahiran = $_POST['skorDataKelahiran'];
         $kesimpulanDataKelahiran = $_POST['kesimpulanDataKelahiran'];
         $RekomendasiDataKelahiran = $_POST['RekomendasiDataKelahiran'];
 
@@ -76,9 +52,10 @@
         $spiritual8 =$_POST['spiritual8']; 
         $spiritual9 =$_POST['spiritual9']; 
         $spiritual10 =$_POST['spiritual10']; 
+        $skorSpiritual =$_POST['skorSpiritual']; 
         $kesimpulanSpiritual =$_POST['kesimpulanSpiritual']; 
         $RekomendasiSpiritual =$_POST['RekomendasiSpiritual']; 
-
+        
         //penglihatan
         $penglihatan1 = $_POST['penglihatan1'];
         $penglihatan2 = $_POST['penglihatan2'];
@@ -100,106 +77,99 @@
         $penglihatan18 = $_POST['penglihatan18'];
         $penglihatan19 = $_POST['penglihatan19'];
         $penglihatan20 = $_POST['penglihatan20'];
+        $skorPenglihatan = $_POST['skorPenglihatan'];
         $kesimpulanPenglihatan = $_POST['kesimpulanPenglihatan'];
-        $RekomendasiPenglihatan = $_POST['RekomendasiPenglihatan'];
+        $RekomendasiPenglihatan = $_POST['RekomendasiPenglihatan'];      
+        
+        // createIdAses
+        $tgl = date('d').date('m').date('y');
+        $data = mysqli_query($koneksi,"SELECT idAses FROM tb_asesmen");
+        $numRow = mysqli_num_rows($data)+1;      
+        $idAses="AS".$tgl.$numRow;
+        
+        
+        $queryAses = mysqli_query($koneksi,"INSERT INTO `tb_asesmen` VALUES ('$idAses', '$usiaKandungan','$kontrolKandunganRutin','$kontrolKandunganDokter','$kontrolKandunganDukun','$gizi','$penyakit','$kecelakaan','$bantuanDokter','$bantuanBidan','$bantuanDukun','$tanpaBantuan','$beratBadan','$panjangBadan','$keadaanLahir','$keadaanLahirVacum','$keadaanLahirOperasi','$imunisasi','$penyakitStep','$minumAsi','$bantuanSusu','$skorDataKelahiran', '$kesimpulanDataKelahiran','$RekomendasiDataKelahiran','$sosial1','$sosial2','$sosial3','$sosial4','$sosial5','$sosial6','$sosial7','$sosial8','$sosial9','$sosial10','$skorSosial','$kesimpulanSosial','$RekomendasiSosial','$spiritual1','$spiritual2','$spiritual3','$spiritual4','$spiritual5','$spiritual6','$spiritual7','$spiritual8','$spiritual9','$spiritual10','$skorSpiritual','$kesimpulanSpiritual','$RekomendasiSpiritual','$penglihatan1','$penglihatan2','$penglihatan3','$penglihatan4','$penglihatan5','$penglihatan6','$penglihatan7','$penglihatan8','$penglihatan9','$penglihatan10','$penglihatan11','$penglihatan12','$penglihatan13','$penglihatan14','$penglihatan15','$penglihatan16','$penglihatan17','$penglihatan18','$penglihatan19','$penglihatan20','$skorPenglihatan','$kesimpulanPenglihatan','$RekomendasiPenglihatan')") or die(mysqli_error($koneksi));
 
-        echo 
-        $namaAyah.'<br>'.
-        $umurAyah.'<br>'.
-        $jenisKelaminAyah.'<br>'.
-        $agamaAyah.'<br>'.
-        $kerjaanAyah.'<br>'.
-        $alamatAyah.'<br>'.
-        $namaIbu.'<br>'.
-        $umurIbu.'<br>'.
-        $jenisKelaminIbu.'<br>'.
-        $agamaIbu.'<br>'.
-        $kerjaanIbu.'<br>'.
-        $alamatIbu.'<br>'.
-        $namaPasien.'<br>'.
-        $ttlPasien.'<br>'.
-        $anakPasien.'<br>'.
-        $jenisKelaminPasien.'<br>'.
-        $agamaPasien.'<br>'.
-        $pendidikanPasien.'<br>'.
-        $statusPasien.'<br>'.
-        $golPasien.'<br>'.
-        $kerjaanPasien.'<br>'.
-        $jmlSaudaraPasien.'<br>'.
-        $kelDekatPasien.'<br><br>'.
-
-        $usiaKandungan.'<br>'.
-        $kontrolKandunganRutin.'<br>'.
-        $kontrolKandunganDokter.'<br>'.
-        $kontrolKandunganDukun.'<br>'.
-        $gizi.'<br>'.
-        $penyakit.'<br>'.
-        $kecelakaan.'<br>'.
-        $bantuanDokter.'<br>'.
-        $bantuanBidan.'<br>'.
-        $bantuanDukun.'<br>'.
-        $tanpaBantuan.'<br>'.
-        $beratBadan.'<br>'.
-        $panjangBadan.'<br>'.
-        $keadaanLahir.'<br>'.
-        $keadaanLahirVacum.'<br>'.
-        $keadaanLahirOperasi.'<br>'.
-        $imunisasi.'<br>'.
-        $penyakitStep.'<br>'.
-        $minumAsi.'<br>'.
-        $bantuanSusu.'<br>'.
-        $kesimpulanDataKelahiran.'<br>'.
-        $RekomendasiDataKelahiran.'<br><br>'.
-
-        $sosial1.'<br>'.
-        $sosial2.'<br>'.
-        $sosial3.'<br>'.
-        $sosial4.'<br>'.
-        $sosial5.'<br>'.
-        $sosial6.'<br>'.
-        $sosial7.'<br>'.
-        $sosial8.'<br>'.
-        $sosial9.'<br>'.
-        $sosial10.'<br>'.
-        $skorSosial.'<br>'.
-        $kesimpulanSosial.'<br>'.
-        $RekomendasiSosial.'<br><br>'.
-
-        $spiritual1.'<br>'.
-        $spiritual2.'<br>'.
-        $spiritual3.'<br>'.
-        $spiritual4.'<br>'.
-        $spiritual5.'<br>'.
-        $spiritual6.'<br>'.
-        $spiritual7.'<br>'.
-        $spiritual8.'<br>'.
-        $spiritual9.'<br>'.
-        $spiritual10.'<br>'.
-        $kesimpulanSpiritual.'<br>'.
-        $RekomendasiSpiritual.'<br><br>'.
-
-        $penglihatan1.'<br>'.
-        $penglihatan2.'<br>'.
-        $penglihatan3.'<br>'.
-        $penglihatan4.'<br>'.
-        $penglihatan5.'<br>'.
-        $penglihatan6.'<br>'.
-        $penglihatan7.'<br>'.
-        $penglihatan8.'<br>'.
-        $penglihatan9.'<br>'.
-        $penglihatan10.'<br>'.
-        $penglihatan11.'<br>'.
-        $penglihatan12.'<br>'.
-        $penglihatan13.'<br>'.
-        $penglihatan14.'<br>'.
-        $penglihatan15.'<br>'.
-        $penglihatan16.'<br>'.
-        $penglihatan17.'<br>'.
-        $penglihatan18.'<br>'.
-        $penglihatan19.'<br>'.
-        $penglihatan20.'<br>'.
-        $kesimpulanPenglihatan.'<br>'.
-        $RekomendasiPenglihatan
-        ;
+        $idPasien=$_POST['idPasien'];
+        $queryPasien=mysqli_query($koneksi,"UPDATE tb_pasien SET idAses='$idAses' WHERE idPasien='$idPasien'") or die(mysqli_error($koneksi));
+        if ($queryPasien&&$queryAses) {
+                exit('success');
+        }else{
+            exit('gagal');
+        }
+        // echo 
+        // $usiaKandungan.'<br>'.
+        // $kontrolKandunganRutin.'<br>'.
+        // $kontrolKandunganDokter.'<br>'.
+        // $kontrolKandunganDukun.'<br>'.
+        // $gizi.'<br>'.
+        // $penyakit.'<br>'.
+        // $kecelakaan.'<br>'.
+        // $bantuanDokter.'<br>'.
+        // $bantuanBidan.'<br>'.
+        // $bantuanDukun.'<br>'.
+        // $tanpaBantuan.'<br>'.
+        // $beratBadan.'<br>'.
+        // $panjangBadan.'<br>'.
+        // $keadaanLahir.'<br>'.
+        // $keadaanLahirVacum.'<br>'.
+        // $keadaanLahirOperasi.'<br>'.
+        // $imunisasi.'<br>'.
+        // $penyakitStep.'<br>'.
+        // $minumAsi.'<br>'.
+        // $bantuanSusu.'<br>'.
+        // $kesimpulanDataKelahiran.'<br>'.
+        // $RekomendasiDataKelahiran.'<br><br>'.
+    
+        // $sosial1.'<br>'.
+        // $sosial2.'<br>'.
+        // $sosial3.'<br>'.
+        // $sosial4.'<br>'.
+        // $sosial5.'<br>'.
+        // $sosial6.'<br>'.
+        // $sosial7.'<br>'.
+        // $sosial8.'<br>'.
+        // $sosial9.'<br>'.
+        // $sosial10.'<br>'.
+        // $skorSosial.'<br>'.
+        // $kesimpulanSosial.'<br>'.
+        // $RekomendasiSosial.'<br><br>'.
+    
+        // $spiritual1.'<br>'.
+        // $spiritual2.'<br>'.
+        // $spiritual3.'<br>'.
+        // $spiritual4.'<br>'.
+        // $spiritual5.'<br>'.
+        // $spiritual6.'<br>'.
+        // $spiritual7.'<br>'.
+        // $spiritual8.'<br>'.
+        // $spiritual9.'<br>'.
+        // $spiritual10.'<br>'.
+        // $kesimpulanSpiritual.'<br>'.
+        // $RekomendasiSpiritual.'<br><br>'.
+    
+        // $penglihatan1.'<br>'.
+        // $penglihatan2.'<br>'.
+        // $penglihatan3.'<br>'.
+        // $penglihatan4.'<br>'.
+        // $penglihatan5.'<br>'.
+        // $penglihatan6.'<br>'.
+        // $penglihatan7.'<br>'.
+        // $penglihatan8.'<br>'.
+        // $penglihatan9.'<br>'.
+        // $penglihatan10.'<br>'.
+        // $penglihatan11.'<br>'.
+        // $penglihatan12.'<br>'.
+        // $penglihatan13.'<br>'.
+        // $penglihatan14.'<br>'.
+        // $penglihatan15.'<br>'.
+        // $penglihatan16.'<br>'.
+        // $penglihatan17.'<br>'.
+        // $penglihatan18.'<br>'.
+        // $penglihatan19.'<br>'.
+        // $penglihatan20.'<br>'.
+        // $kesimpulanPenglihatan.'<br>'.
+        // $RekomendasiPenglihatan
+        // ;
     }
 ?>

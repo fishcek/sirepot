@@ -11,11 +11,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail User | SiRepot</title>
+    <title>Detail Klien | SiRepot</title>
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/vendor/alertify/alertify.min.css" />
-    <link rel="stylesheet" href="../assets/vendor/alertify/themes/default.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
     <link href="../assets/css/util.css" rel="stylesheet">
@@ -42,8 +40,8 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between">
-                <h1 class="h3 text-gray-900">Data Pengguna Aplikasi</h1>
-                <a href="inputData_user" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">Tambah User</a>
+                <h1 class="h3 text-gray-900">Data Pasien</h1>
+                <a href="inputData_klien" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">Tambah Pasien</a>
                 <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
             </div>
 
@@ -57,9 +55,9 @@
                                 <th width="10px">No</th>
                                 <th width="30px">Kode</th>
                                 <th>Nama</th>
-                                <th>Email</th>
-                                <th>Username</th>
-                                <th>Level</th>
+                                <th>Tempat Tanggal Lahir</th>
+                                <th>Tanggal Masuk</th>
+                                <th>Status Aktif</th>
                                 <th width="110px">Aksi</th>
                             </tr>
                         </thead>
@@ -67,27 +65,38 @@
                             <?php
                                 include 'php/koneksi.php';
                                 $no=1;
-                                $ambilData = mysqli_query($koneksi,"Select * From tb_user");
-                                while ($dataUser = mysqli_fetch_array($ambilData) ) {
+                                $ambilData = mysqli_query($koneksi,"SELECT * FROM tb_pasien");
+                                while ($dataPasien = mysqli_fetch_array($ambilData) ) {
+                                    $tglLahir=explode('-',$dataPasien['tanggalLahir']);
+                                    $tglMasuk=explode('-',$dataPasien['tanggalMasukPanti']);
+                                    $ttl=ucwords($dataPasien['tempatLahir']).', '.$tglLahir[2].'-'.$tglLahir[1].'-'.$tglLahir[0];
+                                    $masuk=$tglMasuk[2].'-'.$tglMasuk[1].'-'.$tglMasuk[0];
+                                    if ($dataPasien['statAktif']=='1') {
+                                        $status= '<span class="badge badge-success">Aktif</span>';
+                                        $btnStatus='<a href="php/proses_pasien?proses=nonaktif&id='.$dataPasien['idPasien'].'" class="btn btn-sm btn-warning m-t-5">Nonaktifkan</a>';
+                                    }else{
+                                        $status = '<span class="badge badge-danger">Non Aktif</span>';
+                                        $btnStatus='<a href="php/proses_pasien?proses=aktifkan&id='.$dataPasien['idPasien'].'" class="btn btn-sm btn-warning m-t-5">Aktifkan</a>';
+                                    }
                                 ?>
 
                                     <tr class="text-center">
                                         <th width="10px"><?=$no++;?></th>
-                                        <th width="30px"><?=$dataUser['kode']?></th>
-                                        <th><?=$dataUser['nama']?></th>
-                                        <th><?=$dataUser['email']?></th>
-                                        <th><?=$dataUser['username']?></th>
-                                        <th><?=$dataUser['level']?></th>
+                                        <th width="30px"><?=$dataPasien['idPasien'];?></th>
+                                        <th><?=ucwords($dataPasien['namaPasien']);?></th>
+                                        <th><?=$ttl;?></th>
+                                        <th><?=$masuk;?></th>
+                                        <th><?=$status;?></th>
                                         <td>
-                                            <a href="detail_user?id=<?=$dataUser['kode']?>" class="btn btn-sm btn-warning">Detail</a>
-                                            <button onclick="confirm('<?=$dataUser['kode']?>')" class="btn btn-sm btn-danger">Hapus</button>
+                                            <a href="detail_pasien?id=<?=$dataPasien['idPasien'];?>" class="btn btn-sm btn-success m-t-5">Detail</a>
+                                            <button onclick="confirm('<?=$dataPasien['idPasien']?>')" class="btn btn-sm btn-danger m-t-5">Hapus</button>
+                                            <?=$btnStatus;?>
                                         </td>
                                     </tr>
                                     
                                 <?php
                                 }
                             ?>
-                            
                         </tbody>
                         </table>
                     </div>
@@ -115,17 +124,14 @@
     <script src="../assets/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Alert -->
-    <script src="../assets/vendor/alertify/alertify.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/datatables-demo.js"></script>
-    <!-- Alert -->
-    <script src="../assets/vendor/alertify/alertify.min.js"></script>
+     <!-- Alert -->
+     <script src="../assets/vendor/alertify/alertify.min.js"></script>
     <script>
         function confirm(id){
-            alertify.confirm('Hapus Data', 'Anda Yakin Akan Menghapus Akun Ini ?', function(){ window.location.assign('php/proses_user?proses=delete&id='+id); }
-            , function(){window.location.assign('infoData_user');});
+            alertify.confirm('Hapus Data', 'Anda Yakin Akan Menghapus Akun Ini ?', function(){ window.location.assign('php/proses_pasien?proses=delete&id='+id); }
+            , function(){window.location.assign('infoData_pasien');});
         }
 
     </script>

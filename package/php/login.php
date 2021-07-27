@@ -1,30 +1,43 @@
 <?php
-    if (isset($_POST['masuk'])) {
-        session_start();
+     if (isset($_POST['perform'])) {
+        include 'koneksi.php';
         $username		= $_POST['username'];
-	    $password		= $_POST['password'];
+        $password		= $_POST['password'];
 
-        $_SESSION["login"] = 'ok';
-
-        ?>
-			 <script type="text/javascript">
-				window.location.assign('../home');
-			</script>
-		<?php
+        $login = mysqli_query($koneksi,"SELECT * FROM tb_user WHERE username ='$username'");
+        $userPassword = mysqli_fetch_assoc($login);
+        if (password_verify($password, $userPassword['password'])){	
+            switch ($userPassword['level']) {
+                case 'Fo':
+                    $level='Front Office';
+                    break;
+                case 'Peksos':
+                    $level='Pekerja Sosial';
+                    break;
+                case 'Adm':
+                    $level='Admin';
+                    break;
+                default:
+                    $level='*';
+                    break;
+            }	
+            $token=getToken();
+            $dataSession=[$token, $userPassword['nama'], $level, $userPassword['level']];
+            session_start();
+            $_SESSION["login"] = $dataSession;
+			exit('success');
+		}else{
+            exit('gagal');
+        }
+     }
+     function getToken(){               
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $token = '';
+        for ($i = 0; $i < 40; $i++) {
+            $token .= $characters[rand(0, $charactersLength - 1)];
+        } 
+        return $token;
     }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?=$username;?>
-    <?=$password;?>
-</body>
-</html>
 

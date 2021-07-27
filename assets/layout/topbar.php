@@ -8,7 +8,7 @@
 
 <!-- Topbar Search -->
 <div class="navbar-brand m-t-5">
-  <h5><strong>Sistem Informasi</strong><br>Register Pelayanan Orang Terlantar</h5>
+  <h5><?=ucwords("<strong>Sistem Informasi</strong><br> Administrasi Rehabilitasi Klien Penyandang Disabilitas Sensorik");?></h5>
 </div>
 
 <!-- Topbar Navbar -->
@@ -27,11 +27,13 @@
             </div>
           <?php
         }else{
+          $dataUser=$_SESSION['login'];
+          $token=$dataUser[0];
           ?>
            <a class="nav-link dropdown-toggle " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="nav-profil">
-                <img class="img-profile rounded-circle mr-2" src="../assets/img/dumuser.png">
-                <span class="d-none d-lg-inline text-gray-600 small">Username</span>
+                <img class="img-profile rounded-circle p-1" src="../assets/img/dumuser.png">
+                <span class="d-none d-lg-inline text-gray-600 small"><?=$dataUser[2];?></span>
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -48,7 +50,7 @@
                 Activity Log
               </a>
               <div class="dropdown-divider"></div> -->
-              <a class="dropdown-item" href="php/logout" data-target="#logoutModal">
+              <a class="dropdown-item" data-target="#logoutModal" id="btnlogout">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-800"></i>
                 Logout
               </a>
@@ -63,3 +65,33 @@
 
 </nav>
 <!-- End of Topbar -->
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){    
+      alertify.set('notifier','position', 'top-center');
+      var duration = 1.5;
+    $('#btnlogout').click(function(){
+      var data={
+        perform:'logout'
+      }; 
+        $.ajax({
+          type:'POST',
+          url:'php/logout.php',
+          data:data,
+          success: function (response) {
+            if (response=='success') {
+              var msg = alertify.success('', 1.5, function(){ clearInterval(interval); 
+              window.location.assign('home');});
+              var interval = setInterval(function(){
+                  msg.setContent('Berhasil Logout');
+              },150);                
+            } else {
+              alertify.set('notifier','delay', 1.5);
+              alertify.error('Gagal Logout');
+            }
+          },
+          dataType:'text'
+        });
+    });
+  });
+</script>

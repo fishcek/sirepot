@@ -1,4 +1,4 @@
-    <footer class="sticky-footer text-dark bg-gray-400">
+    <footer class="sticky-footer text-dark">
         <div class="container-fluid my-auto">
           <div class="copyright float-left my-auto">
             <span>Copyright &copy; KodingKita <?=date('Y');?></span>
